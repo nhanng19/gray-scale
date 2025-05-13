@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Grayscale Mode",
+    "version": "1.0",
+    "description": "Applies grayscale to all websites to reduce distractions.",
+    "permissions": ["scripting", "tabs", "storage"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_title": "Toggle Grayscale"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "16": "icon.png"
+    }
+  }
+  
